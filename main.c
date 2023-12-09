@@ -17,7 +17,7 @@ static void test_func(void *arg)
 int main(void) 
 {
     int value = 0;
-    thread_pool_t pool = thread_pool_create(100);
+    thread_pool_t pool = thread_pool_create(5);
     pthread_mutex_init(&lock, NULL);
 
     for(long i = 0; i < LOOP_COUNT; i++)

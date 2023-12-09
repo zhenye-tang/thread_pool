@@ -7,7 +7,6 @@
  */
 
 #include "thread_pool.h"
-#include <semaphore.h>
 #include <pthread.h>
 #include <string.h>
 
