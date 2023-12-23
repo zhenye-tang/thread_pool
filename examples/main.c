@@ -1,4 +1,5 @@
 #include <pthread.h>
+#include <semaphore.h>
 #include <stdio.h>
 #include <unistd.h>
 #include "thread_pool.h"
@@ -8,7 +9,7 @@ static int g_value = 0;
 static pthread_mutex_t lock;
 static void test_func(void *arg)
 {
-    long value = (long)arg;
+    long value = (long )arg;
     pthread_mutex_lock(&lock);
     g_value += value;
     pthread_mutex_unlock(&lock);
@@ -19,7 +20,7 @@ int main(void)
     int value = 0;
     thread_pool_t pool = thread_pool_create(5);
     pthread_mutex_init(&lock, NULL);
-
+    sem_timedwait(NULL, NULL);
     for(long i = 0; i < LOOP_COUNT; i++)
     {
         value += i;

@@ -1,2 +1,1 @@
-# thread_pool
-posix thread pool
+## Posix thread pool
