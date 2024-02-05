@@ -20,7 +20,6 @@ int main(void)
     int value = 0;
     thread_pool_t pool = thread_pool_create(5);
     pthread_mutex_init(&lock, NULL);
-    sem_timedwait(NULL, NULL);
     for(long i = 0; i < LOOP_COUNT; i++)
     {
         value += i;
